@@ -12,3 +12,14 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const db = getFirestore(app);
+import { collection, addDoc } from "firebase/firestore";
+
+// Production data save function
+export const saveProduction = async (data: any) => {
+  try {
+    await addDoc(collection(db, "production"), data);
+    console.log("Data saved successfully");
+  } catch (error) {
+    console.error("Error saving data: ", error);
+  }
+};
