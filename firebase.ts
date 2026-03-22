@@ -1,5 +1,5 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyD_8p2hklBwCAYD_f8MH5A3q3IXE64iESc",
@@ -11,15 +11,8 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-export const db = getFirestore(app);
-import { collection, addDoc } from "firebase/firestore";
+const db = getFirestore(app);
 
-// Production data save function
 export const saveProduction = async (data: any) => {
-  try {
-    await addDoc(collection(db, "production"), data);
-    console.log("Data saved successfully");
-  } catch (error) {
-    console.error("Error saving data: ", error);
-  }
+  await addDoc(collection(db, "production"), data);
 };
