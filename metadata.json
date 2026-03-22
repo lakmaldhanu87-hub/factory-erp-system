@@ -1,0 +1,5 @@
+{
+  "name": "FactoryPro Manufacturing System",
+  "description": "A high-fidelity production management system for factories, featuring raw material tracking, multi-stage expanding, silo management, dry-weight production logic, and efficiency reporting.",
+  "requestFramePermissions": []
+}
